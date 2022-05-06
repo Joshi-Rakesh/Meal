@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { DarkTheme, GlobalStyles, LightTheme } from "./theme/theme";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Home from "./component/Home";
 import Error from "./component/Error";
 import Header from "./component/Header";
@@ -18,7 +18,7 @@ function App() {
     <ThemeProvider theme={theme === "light" ? LightTheme : DarkTheme}>
       <div style={{ height: "100vh" }}>
         <GlobalStyles />
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route
               path="/"
@@ -30,7 +30,7 @@ function App() {
             />
             <Route path="*" element={<Error />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </div>
     </ThemeProvider>
   );
